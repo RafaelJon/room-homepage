@@ -1,0 +1,139 @@
+@use '~src/global' as *;
+
+*{
+    font-size: 12px;
+}
+
+.header{
+    @extend %flex-row;
+    position: absolute;
+    padding: 5vh;
+    img{
+        margin: auto;
+    }
+    p{
+        margin: 0;
+        margin-left: 40px;
+        color: $w;
+        border: 2px solid transparent;
+        transition: .3s linear;
+        cursor: pointer;
+        &:hover{
+            border-bottom: 2px solid white;
+        }
+    }
+}
+
+
+.upper-container{
+    @extend %flex-row; 
+    height: 65vh;
+}
+
+.bottom-container{
+    @extend %flex-row; 
+    height: 35vh;
+    
+}
+
+.home-image-container{
+    width: 60vw;
+    height: 65vh;
+    overflow: hidden;
+    img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.home-content-container{
+    width: 40vw;
+    display: flex;
+}
+
+.home-data-container{
+    @extend %flex-col;
+    justify-content: space-between;
+    width: 30vw;
+    height: 50%;
+    margin: auto;
+    .shop-btn{
+        @extend %flex-row;
+        justify-content: space-between;
+        width: 50%;
+        font-weight: 700;
+        letter-spacing: 7px;
+        &:hover{
+            color: $v-dg;
+            cursor: pointer;
+            .arrow-path{
+                fill: $v-dg;
+            }
+        }
+        &:active{
+            color: $dg;
+            .arrow-path{
+                fill: $dg;
+            }
+        }
+    }
+}
+
+.content-slider{
+    @extend %flex-row;
+    position: absolute;
+    width: 10vw;
+    height: 8.5vh;
+    top: 56.5vh;
+    background-color: $b;
+    div{
+        width: 50%;
+        display: flex;
+        cursor: pointer;
+        transition: .3s linear;
+        &:hover{
+            background-color: $v-dg;
+        }
+        &:active{
+            background-color: $dg;
+        }
+        img{
+            margin: auto;
+        }
+    }
+}
+
+
+%bottom-image{
+    width: 30vw;
+    background-size: cover;
+}
+
+.bottom-image-l{
+    @extend %bottom-image;
+    background-image: url('/assets/images/image-about-dark.jpg');
+}
+
+.bottom-image-r{
+    @extend %bottom-image;
+    background-image: url('/assets/images/image-about-light.jpg');
+}
+
+.bottom-content-container{
+    width: 40vw;
+    display: flex;
+}
+
+.bottom-content{
+    width: 75%;
+    margin: auto;
+    div{
+        letter-spacing: 5px;
+        font-weight: 700;
+        color: $b;
+    }
+    P{
+        color: $dg;
+    }
+}
