@@ -52,6 +52,10 @@
     display: flex;
 }
 
+.home-detail{
+    transition: .3s linear;
+}
+
 .home-data-container{
     @extend %flex-col;
     justify-content: space-between;
@@ -64,6 +68,10 @@
         width: 50%;
         font-weight: 700;
         letter-spacing: 7px;
+        transition: .3s linear;
+        .arrow-path{
+            transition: .3s linear;
+        }
         &:hover{
             color: $v-dg;
             cursor: pointer;
@@ -78,6 +86,11 @@
             }
         }
     }
+}
+
+.home-title-data{
+    font-size: 30px;
+    transition: .3s linear;
 }
 
 .content-slider{

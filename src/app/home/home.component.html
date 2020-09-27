@@ -12,11 +12,13 @@
         </div>
         <div class="home-content-container">
             <div class="home-data-container">
-                <div class="home-title-container" value="ini Title">
-asd
-                </div>
-                <div class="home-detail-container" value="ini detail">
-asd
+                <div class="home-detail" id="home-detail-data">
+                    <div class="home-title-data" id="home-title-data">
+                        {{_homeDataService.title}}
+                    </div>
+                    <div id="home-detail-data">
+                        {{_homeDataService.desc}}
+                    </div>
                 </div>
                 <div class="shop-btn">
                     SHOP NOW
@@ -24,10 +26,10 @@ asd
                 </div>
             </div>
             <div class="content-slider">
-                <div>
+                <div (click)="changeData(-1)">
                     <img src="/assets/images/icon-angle-left.svg" alt="">
                 </div>
-                <div>
+                <div (click)="changeData(1)">
                     <img src="/assets/images/icon-angle-right.svg" alt="">
                 </div>
             </div>
