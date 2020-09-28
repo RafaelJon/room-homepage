@@ -1,28 +1,35 @@
 <div>
     <div class="header">
-        <img src="/assets/images/logo.svg" alt="">
-        <p>home</p>
-        <p>shop</p>
-        <p>about</p>
-        <p>contact</p>
+        <div>
+            <img src="/assets/images/icon-hamburger.svg" alt="">
+        </div>
+        <div class="logo-container">
+            <img src="/assets/images/logo.svg" alt="">
+        </div>
+        <div class="route-header">
+            <p>home</p>
+            <p>shop</p>
+            <p>about</p>
+            <p>contact</p>
+        </div>
     </div>
     <div class="upper-container">
         <div class="image-slider-container">
             <div class="home-image-container" id="home-image-slider">      
                 <div>
-                    <img src="/assets/images/desktop-image-hero-3.jpg" alt="">
+                    <img [src]="getImage3()" alt="">
                 </div>
                 <div>
-                    <img src="/assets/images/desktop-image-hero-1.jpg" alt="">
+                    <img [src]="getImage1()" alt="">
                 </div>      
                 <div>
-                    <img src="/assets/images/desktop-image-hero-2.jpg" alt="">
+                    <img [src]="getImage2()" alt="">
                 </div>
                 <div>
-                    <img src="/assets/images/desktop-image-hero-3.jpg" alt="">
+                    <img [src]="getImage3()" alt="">
                 </div>
                 <div>
-                    <img src="/assets/images/desktop-image-hero-1.jpg" alt="">
+                    <img [src]="getImage1()" alt="">
                 </div>
             </div>
         </div>

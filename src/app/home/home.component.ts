@@ -65,6 +65,7 @@ export class HomeComponent implements OnInit, AfterContentInit{
   }
 
   changeImage(num){
+    let offsite = window.innerWidth <= 768 ? -50 : -65;
     if(num == 1){
       this.imagePos++
     }
@@ -72,13 +73,13 @@ export class HomeComponent implements OnInit, AfterContentInit{
       this.imagePos--
     }
 
-    let pos = (this.imagePos * -65)
+    let pos = (this.imagePos * offsite)
     this.image.style.transform = "translateY(" + pos+ "vh)";
     
     setTimeout(() => {
       if(this.imagePos == 0){
         this.imagePos = 3
-        pos = (this.imagePos * -65)
+        pos = (this.imagePos * offsite)
         this.image.style.transition = 'none';
         this.image.style.transform = "translateY(" + pos+ "vh)";
         setTimeout(() => {
@@ -87,7 +88,7 @@ export class HomeComponent implements OnInit, AfterContentInit{
       }
       else if(this.imagePos == 4){
         this.imagePos = 1
-        pos = (this.imagePos * -65)
+        pos = (this.imagePos * offsite)
         this.image.style.transition = 'none';
         this.image.style.transform = "translateY(" + pos+ "vh)";
         setTimeout(() => {
@@ -95,5 +96,33 @@ export class HomeComponent implements OnInit, AfterContentInit{
         }, 200);
       }    
     }, 350);
+  }
+
+
+  getImage1(){
+    if(window.innerWidth <= 768){
+      return '/assets/images/mobile-image-hero-1.jpg'
+    }
+    else{
+      return '/assets/images/desktop-image-hero-1.jpg';
+    }
+  }
+
+  getImage2(){
+    if(window.innerWidth <= 768){
+      return '/assets/images/mobile-image-hero-2.jpg'
+    }
+    else{
+      return '/assets/images/desktop-image-hero-2.jpg';
+    }
+  }
+
+  getImage3(){
+    if(window.innerWidth <= 768){
+      return '/assets/images/mobile-image-hero-3.jpg'
+    }
+    else{
+      return '/assets/images/desktop-image-hero-3.jpg';
+    }
   }
 }

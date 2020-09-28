@@ -12,6 +12,9 @@
     img{
         margin: auto;
     }
+    .route-header{
+        @extend %flex-row;
+    }
     p{
         margin: 0;
         margin-left: 40px;
@@ -169,6 +172,44 @@
 
 @media screen and (max-width:768px){
 
+    .header{
+        width: calc(100% - 80px);
+        padding: 40px;
+        .route-header{
+            display: none;
+        }
+        .logo-container{
+            display: flex;
+            position: fixed;
+            width: calc(100% - 80px);
+            img{
+                margin: auto;
+            }
+        }
+    }
+
+    .upper-container{
+        width: 100%;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .image-slider-container{
+        height: 50vh;
+        overflow: hidden;
+    }
+
+    .home-image-container{
+        width: 100%;
+        transform: translateY(-50vh);
+        div{
+            height: 50vh;
+            img{
+                height: 100%;
+            }
+        }
+    }
+
     .bottom-container{
         flex-direction: column;
         height: 100%;
@@ -186,4 +227,27 @@
     .bottom-image-r{
         width: 100%;
     }
+
+    .content-slider{
+        width: 30vw;
+        top: 50vh - 8.5vh;
+        right: 0;
+    }
+
+    .home-content-container{
+        width: 100%;
+    }
+    
+    .home-data-container{
+        width: 90%;
+        height: 40vh;
+        margin: 80px 40px;
+        .home-title-data{
+            font-size: 20px;
+        }
+        .shop-btn{
+            width: 75%;
+        }
+    }
+
 }
