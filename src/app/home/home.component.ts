@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit, AfterContentInit{
   opacity = 1
   imagePos = 1;
   changing = false
+  dropDown = false
 
   constructor(public _homeDataService: HomeDataService) {  }
 
@@ -123,6 +124,24 @@ export class HomeComponent implements OnInit, AfterContentInit{
     }
     else{
       return '/assets/images/desktop-image-hero-3.jpg';
+    }
+  }
+
+  getDropDown(){
+    if(this.dropDown == true && window.innerWidth <= 768){
+      return 'display: unset;'
+    }
+    else{
+      return 'display: none;'
+    }
+  }
+
+  toggleDrop(){
+    if(this.dropDown == true){
+      this.dropDown = false
+    }
+    else{
+      this.dropDown = true
     }
   }
 }

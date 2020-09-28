@@ -1,6 +1,15 @@
 <div>
+    <div class="drop-down-container" [style]="getDropDown()">
+        <div class="drop-down-content">
+            <img src="/assets/images/icon-close.svg" alt="" (click)="toggleDrop()">
+            <p>home</p>
+            <p>shop</p>
+            <p>about</p>
+            <p>contact</p>
+        </div>
+    </div>
     <div class="header">
-        <div>
+        <div class="ham-btn" (click)="toggleDrop()">
             <img src="/assets/images/icon-hamburger.svg" alt="">
         </div>
         <div class="logo-container">
