@@ -10,23 +10,29 @@ import { HomeDataService } from '../home-data.service';
 export class HomeComponent implements OnInit, AfterContentInit{
 
   detail: any;
+  image: any;
   opacity = 1
+  imagePos = 1;
   changing = false
 
-  constructor(private _homeDataService: HomeDataService) {  }
+  constructor(public _homeDataService: HomeDataService) {  }
 
   ngAfterContentInit(): void {
     this.detail = document.getElementById("home-detail-data")
+    this.image = document.getElementById("home-image-slider");
     setInterval(() => {
-      this.changing = true
-      this.changeOpa()
-      setTimeout(() => {
-        this._homeDataService.changePosition(1); 
-      }, 600);
-      setTimeout(() => {
+      if(this.changing == false){
+        this.changing = true
         this.changeOpa()
-        this.changing = false
-      }, 800);
+        this.changeImage(1)
+        setTimeout(() => {
+          this._homeDataService.changePosition(1); 
+        }, 600);
+        setTimeout(() => {
+          this.changeOpa()
+          this.changing = false
+        }, 800);
+      }
     }, 4500);
   }
 
@@ -45,13 +51,49 @@ export class HomeComponent implements OnInit, AfterContentInit{
 
   changeData(num){
     if(this.changing == false){
+      this.changing = true
       this.changeOpa()
+      this.changeImage(num)
       setTimeout(() => {
         this._homeDataService.changePosition(num); 
       }, 600);
       setTimeout(() => {
         this.changeOpa()
+        this.changing=false
       }, 800);
     }
+  }
+
+  changeImage(num){
+    if(num == 1){
+      this.imagePos++
+    }
+    else{
+      this.imagePos--
+    }
+
+    let pos = (this.imagePos * -65)
+    this.image.style.transform = "translateY(" + pos+ "vh)";
+    
+    setTimeout(() => {
+      if(this.imagePos == 0){
+        this.imagePos = 3
+        pos = (this.imagePos * -65)
+        this.image.style.transition = 'none';
+        this.image.style.transform = "translateY(" + pos+ "vh)";
+        setTimeout(() => {
+          this.image.style.transition = ".3s linear";
+        }, 200);
+      }
+      else if(this.imagePos == 4){
+        this.imagePos = 1
+        pos = (this.imagePos * -65)
+        this.image.style.transition = 'none';
+        this.image.style.transform = "translateY(" + pos+ "vh)";
+        setTimeout(() => {
+          this.image.style.transition = ".3s linear";
+        }, 200);
+      }    
+    }, 350);
   }
 }
