@@ -102,28 +102,28 @@ export class HomeComponent implements OnInit, AfterContentInit{
 
   getImage1(){
     if(window.innerWidth <= 768){
-      return '/assets/images/mobile-image-hero-1.jpg'
+      return '/room-homepage/assets/images/mobile-image-hero-1.jpg'
     }
     else{
-      return '/assets/images/desktop-image-hero-1.jpg';
+      return '/room-homepage/assets/images/desktop-image-hero-1.jpg';
     }
   }
 
   getImage2(){
     if(window.innerWidth <= 768){
-      return '/assets/images/mobile-image-hero-2.jpg'
+      return '/room-homepage/assets/images/mobile-image-hero-2.jpg'
     }
     else{
-      return '/assets/images/desktop-image-hero-2.jpg';
+      return '/room-homepage/assets/images/desktop-image-hero-2.jpg';
     }
   }
 
   getImage3(){
     if(window.innerWidth <= 768){
-      return '/assets/images/mobile-image-hero-3.jpg'
+      return '/room-homepage/assets/images/mobile-image-hero-3.jpg'
     }
     else{
-      return '/assets/images/desktop-image-hero-3.jpg';
+      return '/room-homepage/assets/images/desktop-image-hero-3.jpg';
     }
   }
 
